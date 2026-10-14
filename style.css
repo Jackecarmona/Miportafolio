@@ -132,7 +132,6 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     background: rgba(16, 185, 129, 0.1);
 }
 
-/* Hacemos que el botón "Contacto" siga la misma línea elegante de cristal */
 .nav-contact-btn {
     background: rgba(16, 185, 129, 0.15) !important;
     color: #34d399 !important;
@@ -145,7 +144,6 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     color: #ffffff !important;
     transform: translateY(-1px);
 }
-
 
 .status-badge {
     background-color: rgba(16, 185, 129, 0.08);
@@ -167,6 +165,7 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     border-radius: 50%;
     box-shadow: 0 0 10px #34d399;
 }
+
 /* Sección Hero */
 .hero-section {
     padding: 40px 80px;
@@ -183,7 +182,6 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     align-items: center;
 }
 
-/* Tarjeta Izquierda y Derecha (con animación hover) */
 .hero-left-card, .hero-right-card {
     background: linear-gradient(145deg, #071510, #040d0a);
     border: 1px solid rgba(16, 185, 129, 0.15);
@@ -226,7 +224,6 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     line-height: 1.6;
 }
 
-/* Contenedor Central Foto con difuminado radial */
 .hero-photo-container {
     display: flex;
     justify-content: center;
@@ -260,7 +257,6 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     transform: scale(1.04);
 }
 
-/* Tarjeta Derecha */
 .hero-right-card {
     text-align: right;
     display: flex;
@@ -287,7 +283,7 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
 /* Sección Proyectos */
 .projects-section {
     padding: 90px 80px;
-    background: linear-gradient(180deg, #030806 0%, #05100c 100%);
+    background: #05100c;
     border-top: 1px solid rgba(16, 185, 129, 0.1);
 }
 
@@ -367,10 +363,53 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     color: #6b7280;
 }
 
+/* Sección de Tecnologías */
+.tech-section {
+    padding: 90px 80px;
+    background: #05100c; 
+    border-top: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tech-card {
+    background: linear-gradient(145deg, #071510, #040d0a);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(52, 211, 153, 0.5);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+}
+
+.tech-card h3 {
+    font-family: 'Outfit', sans-serif;
+    color: #34d399;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tech-card p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Sección Sobre Mí */
 .about-section {
     padding: 100px 80px;
-    background: #05100c;
+    background: #05100c; 
     border-top: 1px solid rgba(16, 185, 129, 0.1);
 }
 
@@ -496,33 +535,65 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     transform: translateY(-3px) scale(1.05);
 }
 
-/* ============================================================
-   ESTILOS RESPONSIVOS PARA MÓVILES (Urgentísimo)
-   ============================================================ */
+/* Estilos para el formulario de contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+}
 
-/* Esta regla aplica para pantallas con un ancho de hasta 768px (móviles y tablets) */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(3, 8, 6, 0.6);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 14px 20px;
+    border-radius: 14px;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #34d399;
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #6b7280;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* ============================================================
+   ESTILOS RESPONSIVOS PARA MÓVILES
+   ============================================================ */
 @media screen and (max-width: 768px) {
-    
-    /* Ajustes generales para el cuerpo */
     body {
         overflow-x: hidden;
     }
 
-    /* Navbar: Ocultamos los enlaces largos y el badge para ganar espacio */
     .navbar {
         padding: 15px 20px;
-        justify-content: center; /* Centramos el logo */
+        justify-content: center;
     }
 
     .nav-container-glass, .status-badge {
-        display: none; /* Ocultamos el menú y el badge en móvil para simplificar */
+        display: none;
     }
 
     .logo-box {
         font-size: 1.2rem;
     }
 
-    /* Sección Hero (Principal): Apilamos los elementos */
     .hero-section {
         padding: 20px 15px;
         min-height: auto;
@@ -531,12 +602,11 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
 
     .hero-content-wrapper {
         display: flex;
-        flex-direction: column; /* Apilamos: Izquierda -> Foto -> Derecha */
+        flex-direction: column;
         gap: 25px;
         text-align: center;
     }
 
-    /* Tarjeta Izquierda (Especialidad) */
     .hero-left-card, .hero-right-card {
         width: 100%;
         padding: 25px;
@@ -545,7 +615,7 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     }
 
     .hero-left-card h2 {
-        font-size: 1.5rem; /* Reducimos el tamaño de los títulos */
+        font-size: 1.5rem;
     }
 
     .hero-left-card p {
@@ -553,25 +623,24 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
         line-height: 1.5;
     }
 
-    /* Foto Central: Ajustamos tamaño y centrado */
     .photo-card-glass {
-        width: 250px; /* Hacemos la foto más pequeña */
+        width: 250px;
         height: 330px;
-        margin: 0 auto; /* Centramos la foto */
+        margin: 0 auto;
     }
 
-    /* Tarjeta Derecha (Nombre) */
     .hero-name {
-        font-size: 2rem; /* Nombre más pequeño para que quepa en una línea */
+        font-size: 2rem;
         text-align: center;
     }
 
     .social-mini-links {
         font-size: 0.8rem;
         justify-content: center;
+        display: flex;
+        gap: 5px;
     }
 
-    /* Sección Proyectos: Ajustamos el grid a 1 columna */
     .projects-section {
         padding: 60px 20px;
     }
@@ -581,21 +650,28 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     }
 
     .projects-container {
-        grid-template-columns: 1fr; /* Una sola tarjeta por fila */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .p-card {
-        height: 200px; /* Tarjetas de proyecto más compactas */
+        height: 200px;
     }
 
-    /* Sección Sobre Mí: Ajustamos el grid y textos */
+    .tech-section {
+        padding: 60px 20px;
+    }
+
+    .tech-container {
+        grid-template-columns: 1fr;
+    }
+
     .about-section {
         padding: 60px 20px;
     }
 
     .about-grid {
-        grid-template-columns: 1fr; /* Títulos y contenido apilados */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 
@@ -607,7 +683,6 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
         font-size: 1rem;
     }
 
-    /* Sección Contacto: Ajustamos padding */
     .cta-section {
         padding: 60px 20px;
     }
@@ -621,18 +696,16 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     }
 
     .cta-buttons {
-        flex-direction: column; /* Botones apilados */
+        flex-direction: column;
         gap: 15px;
     }
     
     .btn-primary, .btn-secondary {
-        width: 100%; /* Botones ocupan todo el ancho */
+        width: 100%;
         padding: 12px 20px;
     }
-}
 
-@media screen and (max-width: 768px) {
-    /* Forzamos el centrado absoluto de todo el contenido principal en móvil */
+    /* Forzamos el centrado absoluto en móvil */
     .hero-content-wrapper,
     .hero-left-card,
     .hero-right-card,
@@ -641,11 +714,5 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     .cta-box {
         text-align: center !important;
         align-items: center !important;
-    }
-
-    .social-mini-links {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
     }
 }
