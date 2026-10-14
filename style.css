@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Aplicamos tipografía principal */
+body {
+    background-color: #030806;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number, .experience-box h4 {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Animaciones de entrada (Keyframes) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatGlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.fade-in {
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-scale {
+    animation: scaleIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Luces de fondo ambientales con sutil flotación */
+.ambient-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    opacity: 0.18;
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+.glow-1 {
+    top: 10%;
+    left: 15%;
+    background-color: #10b981;
+}
+
+.glow-2 {
+    bottom: 20%;
+    right: 15%;
+    background-color: #059669;
+    animation-delay: 4s;
+}
+
+/* Barra de navegación flotante y moderna */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: rgba(3, 8, 6, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.08);
+}
+
+.logo-box {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+.logo-box span {
+    color: #34d399;
+}
+
+/* Contenedor tipo "píldora" de cristal para los enlaces */
+.nav-container-glass {
+    display: flex;
+    align-items: center;
+    background: rgba(7, 21, 16, 0.7);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 6px 10px;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.nav-link {
+    color: #9ca3af;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+/* Hacemos que el botón "Contacto" siga la misma línea elegante de cristal */
+.nav-contact-btn {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #34d399 !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.nav-contact-btn:hover {
+    background: rgba(16, 185, 129, 0.25) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+
+.status-badge {
+    background-color: rgba(16, 185, 129, 0.08);
+    color: #34d399;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    background-color: #34d399;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #34d399;
+}
+/* Sección Hero */
+.hero-section {
+    padding: 40px 80px;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Tarjeta Izquierda y Derecha (con animación hover) */
+.hero-left-card, .hero-right-card {
+    background: linear-gradient(145deg, #071510, #040d0a);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-left-card:hover, .hero-right-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: rgba(52, 211, 153, 0.6);
+    box-shadow: 0 25px 50px rgba(16, 185, 129, 0.2);
+}
+
+.tag-role {
+    color: #34d399;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero-left-card h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.green-highlight {
+    color: #34d399;
+}
+
+.hero-left-card p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Contenedor Central Foto con difuminado radial */
+.hero-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-card-glass {
+    width: 360px;
+    height: 480px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-card-glass img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 85%);
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 85%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-card-glass img:hover {
+    transform: scale(1.04);
+}
+
+/* Tarjeta Derecha */
+.hero-right-card {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hero-name {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.name-highlight {
+    color: #34d399;
+}
+
+.social-mini-links {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Sección Proyectos */
+.projects-section {
+    padding: 90px 80px;
+    background: linear-gradient(180deg, #030806 0%, #05100c 100%);
+    border-top: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-tag {
+    color: #34d399;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.p-card {
+    background: #071510;
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: 20px;
+    padding: 24px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.p-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #34d399;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+    background: #0a1f17;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-top-label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.card-status {
+    font-size: 0.75rem;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.card-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.card-footer {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Sección Sobre Mí */
+.about-section {
+    padding: 100px 80px;
+    background: #05100c;
+    border-top: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-sub {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+.about-content {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.experience-box {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-box:hover {
+    transform: translateX(5px);
+}
+
+.exp-year {
+    color: #34d399;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.experience-box h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 8px 0;
+}
+
+/* Sección Contacto */
+.cta-section {
+    padding: 100px 80px;
+    background: linear-gradient(180deg, #05100c 0%, #030806 100%);
+    text-align: center;
+    border-top: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #071510;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 60px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.cta-box:hover {
+    transform: translateY(-5px);
+}
+
+.cta-box h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.cta-box h2 span {
+    color: #34d399;
+}
+
+.cta-box p {
+    color: #9ca3af;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #34d399;
+    color: #030806;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #6ee7b7;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+    border-color: #34d399;
+    color: #34d399;
+    transform: translateY(-3px) scale(1.05);
+}
