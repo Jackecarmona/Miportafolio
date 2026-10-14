@@ -630,3 +630,22 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
         padding: 12px 20px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    /* Forzamos el centrado absoluto de todo el contenido principal en móvil */
+    .hero-content-wrapper,
+    .hero-left-card,
+    .hero-right-card,
+    .hero-name,
+    .about-content,
+    .cta-box {
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    .social-mini-links {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+}
