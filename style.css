@@ -495,3 +495,138 @@ h1, h2, h3, h4, .hero-name, .about-sub, .section-title, .logo-box, .card-number,
     color: #34d399;
     transform: translateY(-3px) scale(1.05);
 }
+
+/* ============================================================
+   ESTILOS RESPONSIVOS PARA MÓVILES (Urgentísimo)
+   ============================================================ */
+
+/* Esta regla aplica para pantallas con un ancho de hasta 768px (móviles y tablets) */
+@media screen and (max-width: 768px) {
+    
+    /* Ajustes generales para el cuerpo */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Navbar: Ocultamos los enlaces largos y el badge para ganar espacio */
+    .navbar {
+        padding: 15px 20px;
+        justify-content: center; /* Centramos el logo */
+    }
+
+    .nav-container-glass, .status-badge {
+        display: none; /* Ocultamos el menú y el badge en móvil para simplificar */
+    }
+
+    .logo-box {
+        font-size: 1.2rem;
+    }
+
+    /* Sección Hero (Principal): Apilamos los elementos */
+    .hero-section {
+        padding: 20px 15px;
+        min-height: auto;
+        margin-top: 20px;
+    }
+
+    .hero-content-wrapper {
+        display: flex;
+        flex-direction: column; /* Apilamos: Izquierda -> Foto -> Derecha */
+        gap: 25px;
+        text-align: center;
+    }
+
+    /* Tarjeta Izquierda (Especialidad) */
+    .hero-left-card, .hero-right-card {
+        width: 100%;
+        padding: 25px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .hero-left-card h2 {
+        font-size: 1.5rem; /* Reducimos el tamaño de los títulos */
+    }
+
+    .hero-left-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Foto Central: Ajustamos tamaño y centrado */
+    .photo-card-glass {
+        width: 250px; /* Hacemos la foto más pequeña */
+        height: 330px;
+        margin: 0 auto; /* Centramos la foto */
+    }
+
+    /* Tarjeta Derecha (Nombre) */
+    .hero-name {
+        font-size: 2rem; /* Nombre más pequeño para que quepa en una línea */
+        text-align: center;
+    }
+
+    .social-mini-links {
+        font-size: 0.8rem;
+        justify-content: center;
+    }
+
+    /* Sección Proyectos: Ajustamos el grid a 1 columna */
+    .projects-section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Una sola tarjeta por fila */
+        gap: 20px;
+    }
+
+    .p-card {
+        height: 200px; /* Tarjetas de proyecto más compactas */
+    }
+
+    /* Sección Sobre Mí: Ajustamos el grid y textos */
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Títulos y contenido apilados */
+        gap: 30px;
+    }
+
+    .about-sub {
+        font-size: 1.8rem;
+    }
+
+    .about-content {
+        font-size: 1rem;
+    }
+
+    /* Sección Contacto: Ajustamos padding */
+    .cta-section {
+        padding: 60px 20px;
+    }
+
+    .cta-box {
+        padding: 40px 25px;
+    }
+
+    .cta-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column; /* Botones apilados */
+        gap: 15px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Botones ocupan todo el ancho */
+        padding: 12px 20px;
+    }
+}
